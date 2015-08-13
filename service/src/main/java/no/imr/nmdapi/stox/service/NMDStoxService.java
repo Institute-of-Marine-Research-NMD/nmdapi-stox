@@ -11,41 +11,71 @@ import no.imr.nmdapi.generic.response.v1.ListElementType;
  */
 public interface NMDStoxService {
 
+
     /**
      * Get .
      *
-     * @param name
-     * @return
+     * @param missiontype
+     * @param year
+     * @param platform
+     * @param delivery
+     * @return              Mission data.
      */
-    Object getData(String name);
+    Object getData(String missiontype, String year, String platform, String delivery);
 
     /**
      * Delete
      *
-     * @param name
+     * @param missiontype
+     * @param year
+     * @param platform
+     * @param delivery
      */
-    void deleteData(String name);
+    void deleteData(String missiontype, String year, String platform, String delivery);
 
     /**
      * Update
      *
-     * @param name
-     * @param projectType
+     * @param missiontype
+     * @param year
+     * @param platform
+     * @param delivery
+     * @param dataset
      */
-    void updateData(String name, StoxProjectType projectType);
+    void updateData(String missiontype, String year, String platform, String delivery, StoxProjectType dataset);
 
     /**
      * Insert
      *
-     * @param name
-     * @param projectType
+     * @param missiontype
+     * @param year
+     * @param platform
+     * @param delivery
+     * @param dataset
      */
-    void insertData(String name, StoxProjectType projectType);
+    void insertData(String missiontype, String year, String platform, String delivery, StoxProjectType dataset);
 
     /**
      *
+     * @param missiontype
+     * @param year
+     * @param platform
+     * @param delivery
      * @return
      */
-    ListElementType list();
+    boolean hasData(String missiontype, String year, String platform, String delivery);
 
+    /**
+     *
+     * @param cruisenr
+     * @return
+     */
+    boolean hasDataByCruiseNr(String cruisenr);
+
+    /**
+     *
+     * @param cruisenr
+     * @return
+     */
+    Object getDataByCruiseNr(String cruisenr);
 }
