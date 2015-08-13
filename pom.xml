@@ -36,7 +36,7 @@
         <dependency>
             <groupId>no.imr.nmd.commons.stox.jaxb</groupId>
             <artifactId>commons-stox-jaxb</artifactId>
-            <version>0.0.5</version>
+            <version>0.0.6</version>
         </dependency>
         <dependency>
             <groupId>no.imr.nmdapi.common</groupId>
