@@ -27,7 +27,7 @@ public class NMDStoxServiceImpl implements NMDStoxService {
 
      @Override
     public Object getData(final String name) {
-        return seriesReferenceDao.get(name, StoxProjectType.class.getPackage().getName());
+        return seriesReferenceDao.get(name);
     }
 
     @Override
