@@ -1,5 +1,7 @@
 package no.imr.nmdapi.stox.service;
 
+import no.imr.nmd.commons.dataset.jaxb.DatasetType;
+import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
 import no.imr.nmd.commons.stox.jaxb.v1.StoxProjectType;
 import no.imr.nmdapi.generic.response.v1.ListElementType;
 
@@ -47,5 +49,24 @@ public interface NMDStoxService {
      * @return
      */
     ListElementType list();
+
+/**
+     *
+     * @return
+     */
+    DatasetsType listDatasets();
+
+    /**
+     *
+     * @param dataset
+     */
+    void updateDatasets(DatasetType dataset);
+
+    /**
+     *
+     * @param name
+     * @return
+     */
+    Object getInfo(String name);
 
 }

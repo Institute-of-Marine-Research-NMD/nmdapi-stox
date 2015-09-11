@@ -1,6 +1,8 @@
 package no.imr.nmdapi.stox.controller;
 
 import no.imr.framework.logging.slf4j.aspects.stereotype.PerformanceLogging;
+import no.imr.nmd.commons.dataset.jaxb.DatasetType;
+import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
 import no.imr.nmd.commons.stox.jaxb.v1.StoxProjectType;
 import no.imr.nmdapi.generic.response.v1.ListElementType;
 import no.imr.nmdapi.stox.service.NMDStoxService;
@@ -112,6 +114,50 @@ public class StoxController {
         LOGGER.info("Start StoxController.list");
         return nmdStoxService.list();
     }
+
+    /**
+     * List all dataset information.
+     *
+     * @return
+     */
+    @PerformanceLogging
+    @RequestMapping(params = "dataset",value = "/", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public DatasetsType listDatasets() {
+        LOGGER.info("Start StoxController.listDatasets");
+        return nmdStoxService.listDatasets();
+    }
+
+    /**
+     * Update dataset information.
+     *
+     * @param dataset
+     */
+    @PerformanceLogging
+    @RequestMapping(params = "dataset",value = "/", method = RequestMethod.PUT)
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public void updateDatasetInfo(@RequestBody DatasetType dataset) {
+        LOGGER.info("Start StoxController.updateDatasetInfo");
+        nmdStoxService.updateDatasets(dataset);
+    }
+
+    /**
+     * Get data.
+     *
+     * @param name
+     * @return
+     */
+    @PerformanceLogging
+    @RequestMapping(value = "/{name}/info", method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
+    public Object findInfo(@PathVariable(value = "name") String name) {
+        LOGGER.info("Start StoxController.findInfo");
+        return nmdStoxService.getInfo(name);
+    }
+
 
 }
 
