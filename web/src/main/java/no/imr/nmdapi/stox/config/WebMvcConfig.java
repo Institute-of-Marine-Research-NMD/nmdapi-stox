@@ -1,6 +1,7 @@
 package no.imr.nmdapi.stox.config;
 
 import com.fasterxml.jackson.databind.SerializationFeature;
+import java.net.URL;
 import java.util.List;
 import javax.xml.bind.JAXBException;
 import no.imr.nmdapi.common.jaxb.converters.JAXBHttpMessageConverter;
@@ -87,7 +88,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public HttpMessageConverter getEchoMappingJaxBHttpMessageConverter() {
         JAXBHttpMessageConverter converter = null;
         try {
-            converter = new JAXBHttpMessageConverter(new StoxPrefixMapper(),false,
+            URL schemaFile = Thread.currentThread().getContextClassLoader().getResource("stox.xsd");
+            converter = new JAXBHttpMessageConverter(new StoxPrefixMapper(),false, schemaFile,
                     "no.imr.nmd.commons.stox.jaxb.v1");
         } catch (JAXBException ex) {
             LOGGER.error("Error creating message converter.", ex);
