@@ -4,7 +4,7 @@
     <parent>
         <groupId>no.imr.nmdapi.web</groupId>
         <artifactId>nmdapi-parent</artifactId>
-        <version>0.0.7</version>
+        <version>0.0.9</version>
     </parent>
     <groupId>no.imr.nmdapi.stox</groupId>
     <artifactId>parent</artifactId>
@@ -29,14 +29,14 @@
     </repositories>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jaxb.version>2.1.17</jaxb.version>
+        <jaxb.version>2.2.11</jaxb.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>no.imr.nmd.commons.stox.jaxb</groupId>
             <artifactId>commons-stox-jaxb</artifactId>
-            <version>0.0.7</version>
+            <version>0.0.8</version>
         </dependency>
         <dependency>
             <groupId>no.imr.nmdapi.common</groupId>

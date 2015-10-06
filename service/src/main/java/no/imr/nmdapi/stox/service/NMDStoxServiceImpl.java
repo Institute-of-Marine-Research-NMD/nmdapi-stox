@@ -1,6 +1,7 @@
 package no.imr.nmdapi.stox.service;
 
 import java.util.List;
+import no.imr.nmd.commons.dataset.jaxb.DataTypeEnum;
 import no.imr.nmd.commons.dataset.jaxb.DatasetType;
 import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
 import no.imr.nmd.commons.stox.jaxb.v1.StoxProjectType;
@@ -36,7 +37,7 @@ public class NMDStoxServiceImpl implements NMDStoxService {
 
     @Override
     public void deleteData(final String name) {
-        seriesReferenceDao.delete(TYPE, name, true);
+        seriesReferenceDao.delete(DataTypeEnum.STOX, name, true);
     }
 
    @Override
@@ -44,7 +45,7 @@ public class NMDStoxServiceImpl implements NMDStoxService {
         String readRole = configuration.getString("default.readrole");
         String writeRole = configuration.getString("default.writerole");
         String owner = configuration.getString("default.owner");
-        seriesReferenceDao.insert(writeRole, readRole, owner, TYPE, name, stoxProjectType, true);
+        seriesReferenceDao.insert(writeRole, readRole, owner, DataTypeEnum.STOX, name, stoxProjectType, true);
     }
 
     @Override
