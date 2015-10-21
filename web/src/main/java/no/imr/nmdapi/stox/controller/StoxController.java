@@ -1,5 +1,6 @@
 package no.imr.nmdapi.stox.controller;
 
+import no.imr.framework.logging.slf4j.aspects.stereotype.ArgumentLogging;
 import no.imr.framework.logging.slf4j.aspects.stereotype.PerformanceLogging;
 import no.imr.nmd.commons.dataset.jaxb.DatasetType;
 import no.imr.nmd.commons.dataset.jaxb.DatasetsType;
@@ -49,6 +50,7 @@ public class StoxController {
      * @return
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/{name}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -63,6 +65,7 @@ public class StoxController {
      * @param name
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/{name}", method = RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -78,6 +81,7 @@ public class StoxController {
      * @param stoxProjectType
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/{name}", method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -93,6 +97,7 @@ public class StoxController {
      * @param stoxProjectType
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/{name}", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -107,6 +112,7 @@ public class StoxController {
      * @return
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -121,6 +127,7 @@ public class StoxController {
      * @return
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(params = "dataset",value = "/", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -135,6 +142,7 @@ public class StoxController {
      * @param dataset
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(params = "dataset",value = "/", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
@@ -150,6 +158,7 @@ public class StoxController {
      * @return
      */
     @PerformanceLogging
+    @ArgumentLogging
     @RequestMapping(value = "/{name}", method = RequestMethod.GET, params = {"type=info"})
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
